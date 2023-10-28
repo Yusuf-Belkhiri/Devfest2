@@ -34,6 +34,17 @@ public class Wire : MonoBehaviour
         _mainCamera = Camera.main;
 
         _selectedWire = null;
+        
+        GameManager.Instance.GameOverEvent.AddListener(OnGameOver);
+    }
+
+    private void OnGameOver()
+    {
+        if (_selectedWire == this)
+        { 
+            UpdateLineRenderer(transform.position);
+            enabled = false;
+        }
     }
     
     private void Update()
