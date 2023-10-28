@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         _gameDurationSlider.gameObject.SetActive(false);
         _gameOverMenu.SetActive(true);
+        _levelWonMenu.SetActive(false);
     }
     
     private void GameWon()
@@ -96,6 +97,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         _gameDurationSlider.gameObject.SetActive(false);
         _levelWonMenu.SetActive(true);
+        _gameOverMenu.SetActive(false);
+
     }
     
     public void RestartGame()
