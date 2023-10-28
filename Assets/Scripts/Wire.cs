@@ -1,3 +1,4 @@
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Wire : MonoBehaviour
@@ -41,7 +42,8 @@ public class Wire : MonoBehaviour
     private void OnGameOver()
     {
         if (_selectedWire == this)
-        { 
+        {
+            _selectedWire = null;
             UpdateLineRenderer(transform.position);
             enabled = false;
         }
